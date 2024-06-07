@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Interface</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="assets/app.js"></script>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="sidebar">
+            <div class="header">
+                <div class="user-avatar" id="sidebar-avatar"></div>
+                <button class="menu-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#e0e0e0">
+                        <path d="M12 16a2 2 0 100 4 2 2 0 000-4zm0-6a2 2 0 100 4 2 2 0 000-4zm0-6a2 2 0 100 4 2 2 0 000-4z"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="chat-list" id="chat-list">
+                <div class="search-box">
+                    <input type="text" placeholder="Search users...">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#e0e0e0">
+                        <path d="M21.71,20.29,18,16.61a9,9,0,1,0-1.41,1.41l3.68,3.68a1,1,0,0,0,1.41-1.41ZM11,18a7,7,0,1,1,7-7A7,7,0,0,1,11,18Z"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="chat-window">
+            <div class="header divisor">
+                <div class="user-info">
+                    <div class="user-avatar" id="chat-avatar"></div>
+                    <div class="user-details">
+                        <h3 id="user-name">User Name</h3>
+                        <p id="user-status">Online</p>
+                    </div>
+                </div>
+                <div class="header-buttons">
+                    <button class="toggle-theme-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#e0e0e0" viewBox="0 0 256 256" data-darkreader-inline-fill="" style="--darkreader-inline-fill: #262626;"><path d="M232,88H216V64a16,16,0,0,0-16-16H48A16,16,0,0,0,32,64V88H16a8,8,0,0,0,0,16H32v24a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V104h16v50L131.6,182.65A16.07,16.07,0,0,0,120,198v34a8,8,0,0,0,16,0V198l100.4-28.68A16.07,16.07,0,0,0,248,154V104A16,16,0,0,0,232,88Zm-32,40H48V64H200v64Z"></path></svg>
+                    </button>
+                    <button class="search-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#e0e0e0" viewBox="0 0 256 256" data-darkreader-inline-fill="" style="--darkreader-inline-fill: #262626;"><path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path></svg>
+                    </button>
+                    <button class="menu-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="#e0e0e0">
+                            <path d="M12 16a2 2 0 100 4 2 2 0 000-4zm0-6a2 2 0 100 4 2 2 0 000-4zm0-6a2 2 0 100 4 2 2 0 000-4z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="messages" id="messages">
+                <div class="message received">
+                    <p>Hello!</p>
+                </div>
+                <div class="message sent">
+                    <p>Hi! How are you?</p>
+                </div>
+                <div class="message received">
+                    <p>Developed by Mago Minimalista. ❤️</p>
+                </div>
+                <div class="message sent">
+                    <p>Pretty cool! 🤟</p>
+                </div>
+            </div>
+            <div class="input-box">
+                <button class="emoji-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#fff" viewBox="0 0 256 256" data-darkreader-inline-fill="" style="--darkreader-inline-fill: #262626;"><path d="M174.92,156c-10.29,17.79-27.39,28-46.92,28s-36.63-10.2-46.93-28a8,8,0,1,1,13.86-8c7.46,12.91,19.2,20,33.07,20s25.61-7.1,33.08-20a8,8,0,1,1,13.84,8ZM232,128a104.35,104.35,0,0,1-4.56,30.56,8,8,0,0,1-2,3.31l-63.57,63.57a7.9,7.9,0,0,1-3.3,2A104,104,0,1,1,232,128Zm-16,0a87.89,87.89,0,1,0-64,84.69L212.69,152A88.05,88.05,0,0,0,216,128ZM92,120a12,12,0,1,0-12-12A12,12,0,0,0,92,120Zm72-24a12,12,0,1,0,12,12A12,12,0,0,0,164,96Z"></path></svg>
+                </button>
+                <input type="text" placeholder="Type a message">
+                <button class="attach-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#fff" viewBox="0 0 256 256" data-darkreader-inline-fill="" style="--darkreader-inline-fill: #262626;"><path d="M209.66,122.34a8,8,0,0,1,0,11.32l-82.05,82a56,56,0,0,1-79.2-79.21L147.67,35.73a40,40,0,1,1,56.61,56.55L105,193A24,24,0,1,1,71,159L154.3,74.38A8,8,0,1,1,165.7,85.6L82.39,170.31a8,8,0,1,0,11.27,11.36L192.93,81A24,24,0,1,0,159,47L59.76,147.68a40,40,0,1,0,56.53,56.62l82.06-82A8,8,0,0,1,209.66,122.34Z"></path></svg>
+                </button>
+                <button class="photo-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#fff" viewBox="0 0 256 256" data-darkreader-inline-fill="" style="--darkreader-inline-fill: #262626;"><path d="M208,56H180.28L166.65,35.56A8,8,0,0,0,160,32H96a8,8,0,0,0-6.65,3.56L75.71,56H48A24,24,0,0,0,24,80V192a24,24,0,0,0,24,24H208a24,24,0,0,0,24-24V80A24,24,0,0,0,208,56Zm8,136a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V80a8,8,0,0,1,8-8H80a8,8,0,0,0,6.66-3.56L100.28,48h55.43l13.63,20.44A8,8,0,0,0,176,72h32a8,8,0,0,1,8,8ZM128,88a44,44,0,1,0,44,44A44.05,44.05,0,0,0,128,88Zm0,72a28,28,0,1,1,28-28A28,28,0,0,1,128,160Z"></path></svg>
+                </button>
+                <button class="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#fff" viewBox="0 0 256 256" data-darkreader-inline-fill="" style="--darkreader-inline-fill: #262626;"><path d="M128,176a48.05,48.05,0,0,0,48-48V64a48,48,0,0,0-96,0v64A48.05,48.05,0,0,0,128,176ZM96,64a32,32,0,0,1,64,0v64a32,32,0,0,1-64,0Zm40,143.6V240a8,8,0,0,1-16,0V207.6A80.11,80.11,0,0,1,48,128a8,8,0,0,1,16,0,64,64,0,0,0,128,0,8,8,0,0,1,16,0A80.11,80.11,0,0,1,136,207.6Z"></path></svg>
+                </button>
+            </div>
+    </div>
+</body>
+</html>
+
